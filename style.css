@@ -1,9 +1,70 @@
-/* Your Styles */
+/* 
+Rule(s)
+Selector(s) {
+  Property : Value ; 
+}
 
+* CASCADE
+* INHERITED
+* SPECIFITY
+* BOX MODEL
+*/
 
-/* Print Styling */
+/* Diagnostic Styling */
+/* * {
+    outline: 1px dotted gray;
+}
+ */
+/* Print Stylesheet */
 @media print {
+  
+   /*  Print dimensions  */
+  @page {
+    size: letter;
+    margin: 0.75in 0.5in;
+  }
+  
+  /* Don't Waste ink   */
+    * {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /*  Body Styling  */
+  /* CSS Font Stacks
+  https://css-tricks.com/snippets/css/system-font-stack/
+  */
+  body {
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-weight: normal;
+    font-size: 14px; 
+    line-height: 1.5;
+  }
+/*  Show Links  */ 
+a[href]::after {
+    content: " ◆ " attr(href); 
+}
+hr {
+  overflow: visible;
+  padding: 0;
+  border: none;
+  border-top: 1px dotted #9FB7A3; /* sage dotted line */
+  text-align: center;
+  margin: 2rem 0;
+}
 
-    
+hr::after {
+  content: "• • •";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 0.8rem;
+  letter-spacing: 0.4rem;
+  color: #9FB7A3; /* sage */
+  padding: 0 0.3em;
+  background: #FBF7F2; /* your milky cream */
+}
 
+  
+  
 }
